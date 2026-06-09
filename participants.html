@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Participants</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h2>Participant Names</h2>
+
+<div id="inputs"></div>
+
+<button onclick="startQuiz()">Start Quiz</button>
+
+<script>
+
+let count = localStorage.getItem("participantCount");
+let container = document.getElementById("inputs");
+
+for(let i=1;i<=count;i++)
+{
+    container.innerHTML +=
+    `<input type="text" id="p${i}"
+    placeholder="Participant ${i} Name"><br><br>`;
+}
+
+function startQuiz()
+{
+    let names=[];
+
+    for(let i=1;i<=count;i++)
+    {
+        names.push(document.getElementById("p"+i).value);
+    }
+
+    localStorage.setItem("participants",JSON.stringify(names));
+
+    window.location.href="quiz.html";
+}
+
+</script>
+
+</body>
+</html>
