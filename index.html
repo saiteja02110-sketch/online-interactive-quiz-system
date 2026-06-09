@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Quiz</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Online Quiz System</h1>
+        
+        <div id="step-1">
+            <input type="number" id="pCount" placeholder="Number of Participants">
+            <button onclick="setupParticipants()">Next</button>
+        </div>
+
+        <div id="step-2" style="display:none">
+            <div id="name-inputs"></div>
+            <button onclick="startQuiz()">Start Quiz</button>
+        </div>
+
+        <div id="step-3" style="display:none">
+            <h2 id="current-player"></h2>
+            <div id="timer">Time: 0s</div>
+            <div id="question-box"></div>
+            <div id="options-box"></div>
+        </div>
+
+        <div id="step-4" style="display:none">
+            <h2>Leaderboard</h2>
+            <table id="leaderboard-table"></table>
+            <button onclick="location.reload()">Restart</button>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
